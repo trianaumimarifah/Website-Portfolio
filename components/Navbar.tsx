@@ -21,7 +21,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="font-bold text-xl text-primary-600">
-              Triana Sange<span className="text-foreground">.</span>
+              Triana<span className="text-foreground">.</span>
             </Link>
           </div>
 
