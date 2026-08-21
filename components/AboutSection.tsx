@@ -10,7 +10,7 @@ export default function AboutSection() {
               <h2 className="text-3xl font-bold text-foreground mb-6">About</h2>
             </div>
             <div data-aos="fade-right" data-aos-delay="200">
-              <div className="space-y-4 text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed">
+              <div className="space-y-4 text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed text-justify">
                 <p>
                   Most data isn&apos;t hard to collect, it&apos;s hard to trust. Numbers live in different systems, definitions don&apos;t match, and by the time someone needs an answer, nobody&apos;s confident in the dashboard in front of them. Closing that gap is what I care about most.
                 </p>
