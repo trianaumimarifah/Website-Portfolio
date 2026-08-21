@@ -1,7 +1,6 @@
 import { ArrowRight, Download, Briefcase, Database, BarChart, FileJson } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "./FadeIn";
 
 function ToolBadge({ className, children }: { className: string, children: React.ReactNode }) {
   return (
@@ -24,25 +23,25 @@ export default function HeroSection() {
       <div className="w-full flex flex-col md:flex-row items-center gap-12">
         {/* Text Content (Left) */}
         <div className="w-full md:w-3/5 order-2 md:order-1 text-center md:text-left z-10">
-          <FadeIn delay={0.1}>
+          <div data-aos="fade-up" data-aos-delay="100">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary-50 text-primary-700 font-semibold text-sm tracking-wide border border-primary-100 shadow-sm dark:bg-primary-950 dark:border-primary-900 dark:text-primary-300">
               DATA ENTHUSIAST & BI ANALYST
             </div>
-          </FadeIn>
+          </div>
           
-          <FadeIn delay={0.2}>
+          <div data-aos="fade-up" data-aos-delay="200">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground tracking-tight leading-tight mb-6">
               Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-rose-400">Triana Umi Ma&apos;rifah</span>
             </h1>
-          </FadeIn>
+          </div>
           
-          <FadeIn delay={0.3}>
+          <div data-aos="fade-up" data-aos-delay="300">
             <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 mb-10 leading-relaxed max-w-2xl mx-auto md:mx-0">
               Every dataset has a decision hiding inside it. I find it, model it, and turn it into a dashboard people can actually act on. Business Intelligence Analyst and cum laude graduate from Telkom University, experienced in turning raw, messy data into clean, decision-ready insights using SQL, DAX, Python, and AI-augmented analytics.
             </p>
-          </FadeIn>
+          </div>
           
-          <FadeIn delay={0.4}>
+          <div data-aos="fade-up" data-aos-delay="400">
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link 
                 href="#projects"
@@ -60,12 +59,12 @@ export default function HeroSection() {
                 Download CV
               </a>
             </div>
-          </FadeIn>
+          </div>
         </div>
 
         {/* Photo Content (Right) */}
         <div className="w-full md:w-2/5 order-1 md:order-2 flex justify-center mt-10 md:mt-0 relative">
-          <FadeIn direction="left" delay={0.5}>
+          <div data-aos="fade-left" data-aos-delay="500">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-primary-200 to-rose-100 dark:from-primary-900 dark:to-neutral-800 p-2 shadow-2xl flex-shrink-0">
               <div className="w-full h-full rounded-full bg-card-bg border-4 border-white dark:border-neutral-800 flex items-center justify-center overflow-hidden relative">
                 <Image 
@@ -105,7 +104,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </div>
     </section>

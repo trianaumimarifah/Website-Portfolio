@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FadeIn from "./FadeIn";
 
 export default function AboutSection() {
   return (
@@ -7,10 +6,10 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2">
-            <FadeIn direction="right">
+            <div data-aos="fade-right">
               <h2 className="text-3xl font-bold text-foreground mb-6">About</h2>
-            </FadeIn>
-            <FadeIn delay={0.2} direction="right">
+            </div>
+            <div data-aos="fade-right" data-aos-delay="200">
               <div className="space-y-4 text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed">
                 <p>
                   Most data isn&apos;t hard to collect, it&apos;s hard to trust. Numbers live in different systems, definitions don&apos;t match, and by the time someone needs an answer, nobody&apos;s confident in the dashboard in front of them. Closing that gap is what I care about most.
@@ -22,10 +21,10 @@ export default function AboutSection() {
                   That experience spans corporate finance, HR analytics, and e-commerce—from consolidating financial statements across 8 subsidiaries to building a Human Capital dashboard from raw employee data. Different domains, same core skill: turning &quot;I think&quot; into &quot;I know.&quot; I&apos;m not looking to specialize in one industry—just to keep doing that, wherever it&apos;s needed.
                 </p>
               </div>
-            </FadeIn>
+            </div>
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
-            <FadeIn direction="left" delay={0.3}>
+            <div data-aos="fade-left" data-aos-delay="300">
               <div className="w-64 h-64 md:w-80 md:h-80 bg-card-bg rounded-2xl shadow-lg border-4 border-card-border flex items-center justify-center relative overflow-hidden group">
                 <Image 
                   src="/assets/images/Foto About.jpeg" 
@@ -34,7 +33,7 @@ export default function AboutSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </div>

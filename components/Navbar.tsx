@@ -26,7 +26,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6">
             <Link href="/#about" className="text-foreground hover:text-primary-600 font-medium transition-colors">About</Link>
             <Link href="/#experience" className="text-foreground hover:text-primary-600 font-medium transition-colors">Experience</Link>
             <Link href="/#projects" className="text-foreground hover:text-primary-600 font-medium transition-colors">Projects</Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="lg:hidden flex items-center space-x-2">
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -77,7 +77,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-card-bg border-b border-card-border">
+        <div className="lg:hidden bg-card-bg border-b border-card-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/#about" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary-600 hover:bg-neutral-100 dark:hover:bg-neutral-800">About</Link>
             <Link href="/#experience" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary-600 hover:bg-neutral-100 dark:hover:bg-neutral-800">Experience</Link>

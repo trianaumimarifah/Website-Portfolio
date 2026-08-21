@@ -1,5 +1,4 @@
 import { Award, Trophy } from "lucide-react";
-import FadeIn from "./FadeIn";
 
 const certificates = [
   {
@@ -80,21 +79,21 @@ export default function CertificatesSection() {
   return (
     <section id="certificates" className="py-20 bg-card-bg transition-colors duration-300 border-t border-card-border overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn delay={0.1}>
+        <div data-aos="fade-up" data-aos-delay="100">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-foreground mb-4">Training, Certifications & Achievements</h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
               Professional training, certifications, and academic achievements I have accomplished.
             </p>
           </div>
-        </FadeIn>
+        </div>
 
         {/* Horizontal Scroll Container */}
         <div className="relative -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {certificates.map((cert, index) => (
               <div key={cert.id} className="snap-center shrink-0 w-[80vw] sm:w-[350px]">
-                <FadeIn delay={0.1 * (index % 4)} direction="up" className="h-full">
+                <div data-aos="fade-up" data-aos-delay={(index % 4) * 100} className="h-full">
                   <div className="bg-section-bg p-6 rounded-2xl border border-card-border hover:border-primary-300 dark:hover:border-primary-700 transition-colors shadow-sm group h-full flex flex-col relative overflow-hidden">
                     
                     {/* Background Graphic */}
@@ -125,7 +124,7 @@ export default function CertificatesSection() {
                       {cert.details}
                     </p>
                   </div>
-                </FadeIn>
+                </div>
               </div>
             ))}
           </div>

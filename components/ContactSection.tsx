@@ -1,5 +1,4 @@
 import { Mail, Download } from "lucide-react";
-import FadeIn from "./FadeIn";
 
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -37,12 +36,12 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-section-bg transition-colors duration-300 overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <FadeIn delay={0.1}>
+        <div data-aos="fade-up" data-aos-delay="100">
           <h2 className="text-3xl font-bold text-foreground mb-6">Let&apos;s Connect</h2>
           <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl mx-auto">
             Interested in collaborating or have questions about my portfolio? Don&apos;t hesitate to reach out via email or my social links.
           </p>
-        </FadeIn>
+        </div>
         
         <div className="flex flex-wrap justify-center items-center gap-4 mb-12">
           <a 
@@ -94,7 +93,7 @@ export default function ContactSection() {
           </a>
         </div>
 
-        <FadeIn delay={0.3} direction="up">
+        <div data-aos="fade-up" data-aos-delay="300">
           <div className="pt-8 border-t border-card-border">
             <p className="text-neutral-600 dark:text-neutral-400 mb-4">Or you can directly download my CV:</p>
             <a 
@@ -106,7 +105,7 @@ export default function ContactSection() {
               Download Full CV
             </a>
           </div>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

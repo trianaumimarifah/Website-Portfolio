@@ -1,5 +1,4 @@
 import { Briefcase } from "lucide-react";
-import FadeIn from "./FadeIn";
 
 const experiences = [
   {
@@ -61,18 +60,18 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="py-20 bg-section-bg transition-colors duration-300 border-t border-card-border overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn delay={0.1}>
+        <div data-aos="fade-up" data-aos-delay="100">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-foreground mb-4">Work Experience</h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400">
               My career journey and professional experience in the field of data and IT.
             </p>
           </div>
-        </FadeIn>
+        </div>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <FadeIn key={exp.id} delay={0.1 * (index % 3)} direction="up">
+            <div key={exp.id} data-aos="fade-up" data-aos-delay={(index % 3) * 100}>
               <div className="relative pl-8 sm:pl-32 py-6 group">
                 {/* Timeline line */}
                 <div className="hidden sm:block absolute left-[7.5rem] top-0 bottom-0 w-px bg-neutral-200 dark:bg-neutral-800 group-last:bottom-auto group-last:h-full"></div>
@@ -104,7 +103,7 @@ export default function ExperienceSection() {
                   </div>
                 </div>
               </div>
-            </FadeIn>
+            </div>
           ))}
         </div>
       </div>
