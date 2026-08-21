@@ -2,9 +2,9 @@ import { ArrowRight, Download, Briefcase, Database, BarChart, FileJson } from "l
 import Link from "next/link";
 import Image from "next/image";
 
-function ToolBadge({ className, children }: { className: string, children: React.ReactNode }) {
+function ToolBadge({ className, children, style }: { className: string, children: React.ReactNode, style?: React.CSSProperties }) {
   return (
-    <div className={`absolute flex items-center justify-center w-12 h-12 bg-white dark:bg-neutral-800 rounded-full shadow-lg border border-neutral-100 dark:border-neutral-700 ${className}`}>
+    <div className={`absolute flex items-center justify-center w-12 h-12 bg-white dark:bg-neutral-800 rounded-full shadow-lg border border-neutral-100 dark:border-neutral-700 ${className}`} style={style}>
       {children}
     </div>
   );
