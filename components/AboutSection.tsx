@@ -15,10 +15,10 @@ export default function AboutSection() {
                   Most data isn&apos;t hard to collect, it&apos;s hard to trust. Numbers live in different systems, definitions don&apos;t match, and by the time someone needs an answer, nobody&apos;s confident in the dashboard in front of them. Closing that gap is what I care about most.
                 </p>
                 <p>
-                  I graduated as Telkom University&apos;s Best Graduate in 2025 (GPA 3.92, Informatics Engineering), and I&apos;ve built my skill set around exactly that problem—designing data models that make sense, writing DAX measures that hold up under scrutiny, and building live SQL pipelines that don&apos;t break when the business needs them most.
+                  I graduated as Telkom University&apos;s Best Graduate in 2025 (GPA 3.92, Informatics Engineering), and I&apos;ve built my skill set around exactly that problem - designing data models that make sense, writing DAX measures that hold up under scrutiny, and building live SQL pipelines that don&apos;t break when the business needs them most.
                 </p>
                 <p>
-                  That experience spans corporate finance, HR analytics, and e-commerce—from consolidating financial statements across 8 subsidiaries to building a Human Capital dashboard from raw employee data. Different domains, same core skill: turning &quot;I think&quot; into &quot;I know.&quot; I&apos;m not looking to specialize in one industry—just to keep doing that, wherever it&apos;s needed.
+                  That experience spans corporate finance, HR analytics, and e-commerce - from consolidating financial statements across 8 subsidiaries to building a Human Capital dashboard from raw employee data. Different domains, same core skill: turning &quot;I think&quot; into &quot;I know.&quot; I&apos;m not looking to specialize in one industry - just to keep doing that, wherever it&apos;s needed.
                 </p>
               </div>
             </div>
