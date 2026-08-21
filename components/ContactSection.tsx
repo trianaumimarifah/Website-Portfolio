@@ -1,4 +1,5 @@
 import { Mail, Download } from "lucide-react";
+import FadeIn from "./FadeIn";
 
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -34,12 +35,14 @@ function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-section-bg transition-colors duration-300">
+    <section id="contact" className="py-20 bg-section-bg transition-colors duration-300 overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold text-foreground mb-6">Let&apos;s Connect</h2>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl mx-auto">
-          Tertarik untuk berkolaborasi atau memiliki pertanyaan mengenai portofolio saya? Jangan ragu untuk menghubungi saya melalui email atau LinkedIn.
-        </p>
+        <FadeIn delay={0.1}>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Let&apos;s Connect</h2>
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl mx-auto">
+            Interested in collaborating or have questions about my portfolio? Don&apos;t hesitate to reach out via email or my social links.
+          </p>
+        </FadeIn>
         
         <div className="flex flex-wrap justify-center items-center gap-4 mb-12">
           <a 
@@ -91,17 +94,19 @@ export default function ContactSection() {
           </a>
         </div>
 
-        <div className="pt-8 border-t border-card-border">
-          <p className="text-neutral-600 dark:text-neutral-400 mb-4">Atau Anda bisa langsung mengunduh CV saya:</p>
-          <a 
-            href="/assets/CV_Triana.pdf"
-            download
-            className="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-primary-600 hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
-          >
-            <Download className="mr-2 w-5 h-5" />
-            Download Full CV
-          </a>
-        </div>
+        <FadeIn delay={0.3} direction="up">
+          <div className="pt-8 border-t border-card-border">
+            <p className="text-neutral-600 dark:text-neutral-400 mb-4">Or you can directly download my CV:</p>
+            <a 
+              href="/assets/CV_Triana.pdf"
+              download
+              className="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-primary-600 hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
+            >
+              <Download className="mr-2 w-5 h-5" />
+              Download Full CV
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

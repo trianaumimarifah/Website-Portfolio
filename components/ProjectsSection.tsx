@@ -1,54 +1,83 @@
+import { ExternalLink } from "lucide-react";
 import { projects } from "@/lib/data";
-import { ArrowRight, BarChart2 } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import FadeIn from "./FadeIn";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-card-bg transition-colors duration-300">
+    <section id="projects" className="py-20 bg-card-bg transition-colors duration-300 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Featured Projects</h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl">
-            Berikut adalah beberapa case study yang menunjukkan proses analisis data end-to-end, mulai dari data preparation hingga visualisasi.
-          </p>
-        </div>
+        <FadeIn delay={0.1}>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Featured Projects</h2>
+            <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl">
+              Here are some case studies showcasing end-to-end data analysis processes, from data preparation to interactive visualizations.
+            </p>
+          </div>
+        </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <div key={project.id} className="group flex flex-col bg-section-bg border border-card-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
-              {/* Project Image Placeholder */}
-              <div className="w-full h-56 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center relative border-b border-card-border">
-                <BarChart2 className="w-12 h-12 text-neutral-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        {/* Horizontal Scroll Container */}
+        <div className="relative -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+          <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {projects.map((project, index) => (
+              <div key={project.id} className="snap-center shrink-0 w-[85vw] sm:w-[400px] md:w-[450px]">
+                <FadeIn delay={0.1 * (index % 4)} direction="left" className="h-full">
+                  <div className="group h-full flex flex-col bg-section-bg border border-card-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                    {/* Project Image */}
+                    <div className="w-full h-56 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center relative border-b border-card-border overflow-hidden">
+                      <Image 
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    
+                    {/* Project Content */}
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tools.map((tool) => (
+                          <span 
+                            key={tool}
+                            className="px-3 py-1 bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 text-xs font-semibold rounded-full"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary-600 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-neutral-600 dark:text-neutral-400 mb-6 flex-grow text-sm leading-relaxed">
+                        {project.description}
+                      </p>
+                      <a 
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-sm transition-colors mt-auto"
+                      >
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
+                    </div>
+                  </div>
+                </FadeIn>
               </div>
-              
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tools.map((tool) => (
-                    <span key={tool} className="px-2.5 py-1 bg-primary-50 text-primary-700 text-xs font-semibold rounded-md border border-primary-100">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary-600 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-neutral-600 dark:text-neutral-400 mb-6 flex-grow line-clamp-2">
-                  {project.description}
-                </p>
-                <Link 
-                  href={`/projects/${project.slug}`}
-                  className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors"
-                >
-                  Lihat Detail Case Study
-                  <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Fading Edges for Scroll indication */}
+          <div className="absolute top-0 right-0 bottom-8 w-12 sm:w-24 bg-gradient-to-l from-card-bg to-transparent pointer-events-none z-10"></div>
+          <div className="absolute top-0 left-0 bottom-8 w-12 sm:w-24 bg-gradient-to-r from-card-bg to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
+      
+      <style dangerouslySetInnerHTML={{__html: `
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}} />
     </section>
   );
 }

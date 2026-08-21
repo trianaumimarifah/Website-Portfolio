@@ -1,4 +1,5 @@
 import { Briefcase } from "lucide-react";
+import FadeIn from "./FadeIn";
 
 const experiences = [
   {
@@ -58,48 +59,52 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 bg-section-bg transition-colors duration-300 border-t border-card-border">
+    <section id="experience" className="py-20 bg-section-bg transition-colors duration-300 border-t border-card-border overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Work Experience</h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400">
-            Perjalanan karir dan pengalaman profesional saya dalam bidang data dan IT.
-          </p>
-        </div>
+        <FadeIn delay={0.1}>
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Work Experience</h2>
+            <p className="text-lg text-neutral-600 dark:text-neutral-400">
+              My career journey and professional experience in the field of data and IT.
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={exp.id} className="relative pl-8 sm:pl-32 py-6 group">
-              {/* Timeline line */}
-              <div className="hidden sm:block absolute left-[7.5rem] top-0 bottom-0 w-px bg-neutral-200 dark:bg-neutral-800 group-last:bottom-auto group-last:h-full"></div>
-              
-              {/* Timeline dot */}
-              <div className="hidden sm:flex absolute left-[7rem] top-8 w-4 h-4 rounded-full bg-primary-500 border-4 border-card-bg items-center justify-center shadow-sm"></div>
-
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-12">
-                {/* Date column */}
-                <div className="sm:w-32 flex-shrink-0 sm:text-right pt-2 sm:pt-1">
-                  <span className="text-sm font-semibold text-primary-600 dark:text-primary-400">{exp.period}</span>
-                </div>
+            <FadeIn key={exp.id} delay={0.1 * (index % 3)} direction="up">
+              <div className="relative pl-8 sm:pl-32 py-6 group">
+                {/* Timeline line */}
+                <div className="hidden sm:block absolute left-[7.5rem] top-0 bottom-0 w-px bg-neutral-200 dark:bg-neutral-800 group-last:bottom-auto group-last:h-full"></div>
                 
-                {/* Content column */}
-                <div className="flex-grow bg-card-bg p-6 rounded-2xl border border-card-border shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-bold text-foreground mb-1">{exp.role}</h3>
-                  <div className="flex items-center text-neutral-600 dark:text-neutral-400 mb-4 font-medium text-sm">
-                    <Briefcase className="w-4 h-4 mr-2" />
-                    {exp.company}
+                {/* Timeline dot */}
+                <div className="hidden sm:flex absolute left-[7rem] top-8 w-4 h-4 rounded-full bg-primary-500 border-4 border-card-bg items-center justify-center shadow-sm group-hover:scale-150 transition-transform duration-300"></div>
+
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-12">
+                  {/* Date column */}
+                  <div className="sm:w-32 flex-shrink-0 sm:text-right pt-2 sm:pt-1">
+                    <span className="text-sm font-semibold text-primary-600 dark:text-primary-400">{exp.period}</span>
                   </div>
-                  <ul className="space-y-2">
-                    {exp.description.map((desc, i) => (
-                      <li key={i} className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed flex items-start">
-                        <span className="mr-2 text-primary-500 mt-1.5">•</span>
-                        <span>{desc}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  
+                  {/* Content column */}
+                  <div className="flex-grow bg-card-bg p-6 rounded-2xl border border-card-border shadow-sm hover:shadow-md transition-shadow">
+                    <h3 className="text-xl font-bold text-foreground mb-1">{exp.role}</h3>
+                    <div className="flex items-center text-neutral-600 dark:text-neutral-400 mb-4 font-medium text-sm">
+                      <Briefcase className="w-4 h-4 mr-2" />
+                      {exp.company}
+                    </div>
+                    <ul className="space-y-2">
+                      {exp.description.map((desc, i) => (
+                        <li key={i} className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed flex items-start">
+                          <span className="mr-2 text-primary-500 mt-1.5">•</span>
+                          <span>{desc}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </div>
