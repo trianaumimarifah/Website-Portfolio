@@ -36,7 +36,7 @@ export default function HeroSection() {
           </div>
           
           <div data-aos="fade-up" data-aos-delay="300">
-            <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 mb-10 leading-relaxed max-w-2xl mx-auto md:mx-0">
+            <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 mb-10 leading-relaxed max-w-2xl mx-auto md:mx-0 text-justify">
               Every dataset has a decision hiding inside it. I find it, model it, and turn it into a dashboard people can actually act on. Business Intelligence Analyst and cum laude graduate from Telkom University, experienced in turning raw, messy data into clean, decision-ready insights using SQL, DAX, Python, and AI-augmented analytics.
             </p>
           </div>
